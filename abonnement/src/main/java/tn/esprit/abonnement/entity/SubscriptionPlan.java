@@ -16,11 +16,15 @@ public class SubscriptionPlan {
     private Long id;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "name")
     private PlanType name; // FREEMIUM, STANDARD, PREMIUM
 
+    @Column(name = "price")
     private Double price;
 
+    @Column(name = "duration")
     private Integer durationDays; // e.g. 30
 
+    @Column(name = "description")
     private String description;
 }
