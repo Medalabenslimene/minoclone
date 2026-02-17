@@ -16,19 +16,25 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column(name = "user_id")
     private Long userId; // nullable → anonymous donation
 
+    @Column(name = "amount")
     private Double amount;
 
+    @Column(name = "message")
     private String message;
 
-    private Boolean anonymous = false;
+    @Column(name = "anonymous")
+    private Boolean anonymous;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private DonationStatus status;
 
+    @Column(name = "payment_method")
     private String paymentMethod; // CARD, STRIPE, FAKE
 
-    private LocalDateTime donatedAt = LocalDateTime.now();
+    @Column(name = "donated_at")
+    private LocalDateTime donatedAt;
 }
